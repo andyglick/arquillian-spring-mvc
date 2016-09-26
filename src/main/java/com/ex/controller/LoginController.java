@@ -19,11 +19,12 @@ public class LoginController {
 	public String userCheck(ModelMap model, HttpServletRequest request) {
 		String name=request.getParameter("name");
 		String pwd=request.getParameter("pwd");
-		if("test".equalsIgnoreCase(name)&&"test".equalsIgnoreCase(pwd)){
+		if("admin".equalsIgnoreCase(name)&&"test".equalsIgnoreCase(pwd)){
 			model.addAttribute("message", "Successfully logged in.");
-			
+			System.out.println("LOGIN SUCCEEDED");
 		}else{
 			model.addAttribute("message", "Username or password is wrong.");
+			System.out.println("LOGIN FAILED");
 		}
 		return "redirect:success.jsp";
 	}
